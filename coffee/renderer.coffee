@@ -29,6 +29,7 @@ documentFile = (stylusFile, outputDir = null, templateDir = null) ->
     # Render the tree
     renderFileTree stylusFile, tree, templateDir, outputDir
 
+
 # Render a file's tree
 renderFileTree = (fileName, tree, templateDir, outputDir) ->
 
@@ -39,11 +40,23 @@ renderFileTree = (fileName, tree, templateDir, outputDir) ->
     options =
         fileName : fileName
         tree     : tree
+        pretty   : true
 
     # Render
     jade.renderFile template, options, (err, str) ->
-        console.log err
-        console.log str
+
+        # Exit on error
+        process.exit 1 if err?
+
+        writeOutput str, outputDir, fileName
+
+# Write to disk
+writeOutput = (html, outputDir, stylusFile) ->
+
+    outFile = outputDir + '/' + (path.basename stylusFile) + '.html'
+    console.log outFile
+
+    fs.writeFileSync outFile, html
 
 # Exports
 module.exports = {documentFile}
