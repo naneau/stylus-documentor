@@ -224,5 +224,3 @@ unComment = (line) ->
 
 # Export the parseFile method
 module.exports = parseFile
-
-console.log parseFile '/Users/naneau/Workspace/klipspringer/library/text.styl'
