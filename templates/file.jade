@@ -3,6 +3,14 @@ html
     body
         h1 #{fileName}
 
+        // Imports
+        section.imports
+            h1 Imports
+
+            ul
+            each importStatement in tree.imports
+                li #{importStatement}
+
         // Variables
         section.variables
             h1 Variables
