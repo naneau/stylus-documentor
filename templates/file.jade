@@ -1,0 +1,21 @@
+doctype
+html
+    body
+        h1 #{fileName}
+
+        // Variables
+        section.variables
+            h1 Variables
+
+            each variable in tree.variables
+                h2 #{variable.function}
+                p #{variable.description}
+
+        // Functions
+        section.functions
+            h1 Functions
+
+            each functionDefinition in tree.functions
+                h2 #{functionDefinition.function}
+                p #{functionDefinition.description}
+
