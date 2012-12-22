@@ -17,5 +17,13 @@
     "klipspringer"
   ],
   "author": "Maurice Fonk (naneau)",
-  "license": "BSD"
+  "license": "BSD",
+
+  "devDependencies" : {
+      "coffee-script" : ">=1.4.0 <1.5"
+  },
+
+  "dependencies" : {
+      "optimist" : ">=0.3.5 < 0.4"
+  }
 }
