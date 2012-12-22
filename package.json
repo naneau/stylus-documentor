@@ -1,0 +1,21 @@
+{
+  "name": "stylus-documentor",
+  "version": "0.0.0",
+  "description": "A very naive stylus documentor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:naneau/stylus-documentor.git"
+  },
+  "keywords": [
+    "stlylus",
+    "documentor",
+    "documentation",
+    "klipspringer"
+  ],
+  "author": "Maurice Fonk (naneau)",
+  "license": "BSD"
+}
