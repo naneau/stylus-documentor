@@ -1,3 +1,10 @@
+mixin assignment(definition)
+    h2 #{definition.function}
+    p
+        span.line-number #{definition.line}
+
+        span.description #{definition.description}
+
 doctype
 html
     body
@@ -16,14 +23,11 @@ html
             h1 Variables
 
             each variable in tree.variables
-                h2 #{variable.function}
-                p #{variable.description}
+                mixin assignment(functionDefinition)
 
         // Functions
         section.functions
             h1 Functions
 
             each functionDefinition in tree.functions
-                h2 #{functionDefinition.function}
-                p #{functionDefinition.description}
-
+                mixin assignment(functionDefinition)
