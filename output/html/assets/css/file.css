@@ -122,11 +122,11 @@ select {
 }
 body {
   font-family: Helvetica Neue, Helvetica, Arial, Sans Serif;
-  color: inherit;
+  color: #143941;
   font-size: 14px;
   line-height: 26.599999999999998px;
-  background-color: #f3f3f3;
-  text-shadow: 1px 1px 0 #f7f7f7;
+  background-color: #bde3eb;
+  text-shadow: 1px 1px 0 #d1ebf1;
   font-weight: 200;
 }
 #all {
@@ -157,16 +157,16 @@ h1 {
 .functions {
   margin-bottom: 20px;
   padding-bottom: 20px;
-  -webkit-box-shadow: 0 1px 0 #f4f4f4;
-  -moz-box-shadow: 0 1px 0 #f4f4f4;
-  -o-box-shadow: 0 1px 0 #f4f4f4;
-  -ms-box-shadow: 0 1px 0 #f4f4f4;
-  -khtml-box-shadow: 0 1px 0 #f4f4f4;
-  box-shadow: 0 1px 0 #f4f4f4;
-  border-bottom: 1px solid #dbdbdb;
+  -webkit-box-shadow: 0 1px 0 #c4e6ed;
+  -moz-box-shadow: 0 1px 0 #c4e6ed;
+  -o-box-shadow: 0 1px 0 #c4e6ed;
+  -ms-box-shadow: 0 1px 0 #c4e6ed;
+  -khtml-box-shadow: 0 1px 0 #c4e6ed;
+  box-shadow: 0 1px 0 #c4e6ed;
+  border-bottom: 1px solid #9cd5e1;
 }
 .assignment {
-  margin-bottom: 20px;
+  margin-bottom: 12.360939431396785px;
 }
 .assignment h2 {
   font-family: Helvetica Neue, Helvetica, Arial, Sans Serif;
@@ -179,13 +179,13 @@ h1 {
 .assignment .line-number {
   color: #1c7c03;
   float: left;
-  -webkit-box-shadow: 1px 0 0 #f4f4f4;
-  -moz-box-shadow: 1px 0 0 #f4f4f4;
-  -o-box-shadow: 1px 0 0 #f4f4f4;
-  -ms-box-shadow: 1px 0 0 #f4f4f4;
-  -khtml-box-shadow: 1px 0 0 #f4f4f4;
-  box-shadow: 1px 0 0 #f4f4f4;
-  border-right: 1px solid #dbdbdb;
+  -webkit-box-shadow: 1px 0 0 #c4e6ed;
+  -moz-box-shadow: 1px 0 0 #c4e6ed;
+  -o-box-shadow: 1px 0 0 #c4e6ed;
+  -ms-box-shadow: 1px 0 0 #c4e6ed;
+  -khtml-box-shadow: 1px 0 0 #c4e6ed;
+  box-shadow: 1px 0 0 #c4e6ed;
+  border-right: 1px solid #9cd5e1;
   margin-right: 12.360939431396785px;
   padding-right: 12.360939431396785px;
 }

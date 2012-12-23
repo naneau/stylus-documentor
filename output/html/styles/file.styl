@@ -1,12 +1,15 @@
-page-width = 960px
-background-color = #f3f3f3
+page-width       = 960px
+background-color = #bde3eb
+text-color       = darken(background-color, 80%)
+
+//#f3f3f3
 // Import Klipspringer library
 @import '../../../node_modules/klipspringer'
 
 reset()
 
 body
-    text(1)
+    text(1, inherit-color: false)
     background-color background-color
     text-shadow 1px 1px 0 lighten(background-color, 30%)
     font-weight 200
@@ -32,7 +35,7 @@ h1
     border-inset-bottom background-color
 
 .assignment
-    block()
+    block(padding-distance-small)
 
     h2
         text-header(1.2)
