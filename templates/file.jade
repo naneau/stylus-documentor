@@ -1,13 +1,8 @@
-// Mixin for assignment of function or var
-mixin assignment(definition)
-    h2 #{definition.function}
-    p
-        span.line-number #{definition.line}
-
-        span.description #{definition.description}
+include assignment
 
 doctype
 html
+    title #{fileName}
     body
         h1 #{fileName}
 
