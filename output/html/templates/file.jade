@@ -7,26 +7,27 @@ html
     link(href='assets/css/file.css', rel='stylesheet')
 
     body
-        h1 #{fileName}
+        #all
+            h1 #{fileName}
 
-        // Imports
-        section.imports
-            h1 Imports
+            // Imports
+            section.imports
+                h1 Imports
 
-            ul
-                each importStatement in tree.imports
-                    li #{importStatement}
+                ul
+                    each importStatement in tree.imports
+                        li #{importStatement}
 
-        // Variables
-        section.variables
-            h1 Variables
+            // Variables
+            section.variables
+                h1 Variables
 
-            each variable in tree.variables
-                mixin assignment(functionDefinition)
+                each variable in tree.variables
+                    mixin assignment(functionDefinition)
 
-        // Functions
-        section.functions
-            h1 Functions
+            // Functions
+            section.functions
+                h1 Functions
 
-            each functionDefinition in tree.functions
-                mixin assignment(functionDefinition)
+                each functionDefinition in tree.functions
+                    mixin assignment(functionDefinition)

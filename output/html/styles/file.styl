@@ -1,5 +1,45 @@
+page-width = 960px
+background-color = #f3f3f3
 // Import Klipspringer library
 @import '../../../node_modules/klipspringer'
 
+reset()
+
 body
     text(1)
+    background-color background-color
+    text-shadow 1px 1px 0 lighten(background-color, 30%)
+    font-weight 200
+
+#all
+    margin padding-distance auto
+    width page-width
+
+    & > h1
+        text-header (2)
+
+.imports
+   li
+       margin-left padding-distance
+
+h1
+    text-header(1.4)
+
+
+.imports, .variables, .functions
+    block()
+    padding-bottom padding-distance
+    border-inset-bottom background-color
+
+.assignment
+    block()
+
+    h2
+        text-header(1.2)
+
+    .line-number
+        color #1c7c03
+        float left
+        border-inset-right background-color
+        margin-right padding-distance-small
+        padding-right padding-distance-small

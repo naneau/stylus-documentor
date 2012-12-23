@@ -61,7 +61,7 @@
 
   copyAssets = function(inputDir, outputDir) {
     console.log("Copying assets from " + inputDir + "/assets to " + outputDir);
-    return wrench.copyDirSyncRecursive("" + inputDir + "/assets", outputDir);
+    return wrench.copyDirSyncRecursive("" + inputDir + "/assets", "" + outputDir + "/assets");
   };
 
   module.exports = {

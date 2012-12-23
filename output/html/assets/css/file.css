@@ -1,6 +1,191 @@
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 1px solid 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+body {
+  line-height: 1;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+nav ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote before,
+blockquote after,
+q before,
+q after {
+  content: '';
+  content: none;
+}
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+input,
+select {
+  vertical-align: middle;
+}
 body {
   font-family: Helvetica Neue, Helvetica, Arial, Sans Serif;
   color: inherit;
   font-size: 14px;
   line-height: 26.599999999999998px;
+  background-color: #f3f3f3;
+  text-shadow: 1px 1px 0 #f7f7f7;
+  font-weight: 200;
+}
+#all {
+  margin: 20px auto;
+  width: 960px;
+}
+#all > h1 {
+  font-family: Helvetica Neue, Helvetica, Arial, Sans Serif;
+  color: inherit;
+  font-size: 28px;
+  line-height: 53.199999999999996px;
+  font-family: Helvetica Neue, Helvetica, Arial, Sans Serif;
+  font-weight: bold;
+}
+.imports li {
+  margin-left: 20px;
+}
+h1 {
+  font-family: Helvetica Neue, Helvetica, Arial, Sans Serif;
+  color: inherit;
+  font-size: 19.599999999999998px;
+  line-height: 37.239999999999995px;
+  font-family: Helvetica Neue, Helvetica, Arial, Sans Serif;
+  font-weight: bold;
+}
+.imports,
+.variables,
+.functions {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  -webkit-box-shadow: 0 1px 0 #f4f4f4;
+  -moz-box-shadow: 0 1px 0 #f4f4f4;
+  -o-box-shadow: 0 1px 0 #f4f4f4;
+  -ms-box-shadow: 0 1px 0 #f4f4f4;
+  -khtml-box-shadow: 0 1px 0 #f4f4f4;
+  box-shadow: 0 1px 0 #f4f4f4;
+  border-bottom: 1px solid #dbdbdb;
+}
+.assignment {
+  margin-bottom: 20px;
+}
+.assignment h2 {
+  font-family: Helvetica Neue, Helvetica, Arial, Sans Serif;
+  color: inherit;
+  font-size: 16.8px;
+  line-height: 31.919999999999998px;
+  font-family: Helvetica Neue, Helvetica, Arial, Sans Serif;
+  font-weight: bold;
+}
+.assignment .line-number {
+  color: #1c7c03;
+  float: left;
+  -webkit-box-shadow: 1px 0 0 #f4f4f4;
+  -moz-box-shadow: 1px 0 0 #f4f4f4;
+  -o-box-shadow: 1px 0 0 #f4f4f4;
+  -ms-box-shadow: 1px 0 0 #f4f4f4;
+  -khtml-box-shadow: 1px 0 0 #f4f4f4;
+  box-shadow: 1px 0 0 #f4f4f4;
+  border-right: 1px solid #dbdbdb;
+  margin-right: 12.360939431396785px;
+  padding-right: 12.360939431396785px;
 }
