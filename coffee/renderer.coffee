@@ -5,20 +5,23 @@ jade = require 'jade'
 fs   = require 'fs'
 path = require 'path'
 
+# Wrench
+wrench = require 'wrench'
+
 # Parser
 parse = require './parser'
 
 # Default templates dir
-defaultTemplatedir = path.join (path.dirname (fs.realpathSync __filename)), '../output/html/templates'
+defaultInputDir = path.join (path.dirname (fs.realpathSync __filename)), '../output/html'
 
 # Document a file
-documentFile = (stylusFile, outputDir = null, templateDir = null) ->
+documentFile = (stylusFile, outputDir = null, inputDir = null) ->
 
     # Output
     outputDir = (do process.cwd) if not outputDir?
 
     # Dir of templates
-    templateDir = defaultTemplatedir if not templateDir?
+    inputDir = defaultInputDir if not inputDir?
 
     # Make sure file exists
     error "\"#{stylusFile}\" does not exist" if not fs.existsSync stylusFile
@@ -27,14 +30,13 @@ documentFile = (stylusFile, outputDir = null, templateDir = null) ->
     tree = parse stylusFile
 
     # Render the tree
-    renderFileTree stylusFile, tree, templateDir, outputDir
-
+    renderFileTree stylusFile, tree, inputDir, outputDir
 
 # Render a file's tree
-renderFileTree = (fileName, tree, templateDir, outputDir) ->
+renderFileTree = (fileName, tree, inputDir, outputDir) ->
 
     # Template file
-    template = (templateDir + '/file.jade')
+    template = (inputDir + '/templates/file.jade')
 
     # Options
     options =
@@ -48,15 +50,26 @@ renderFileTree = (fileName, tree, templateDir, outputDir) ->
         # Exit on error
         process.exit 1 if err?
 
+        # Copy assets
+        copyAssets inputDir, outputDir
+
+        # Write the output
         writeOutput str, outputDir, fileName
 
 # Write to disk
 writeOutput = (html, outputDir, stylusFile) ->
 
     outFile = outputDir + '/' + (path.basename stylusFile) + '.html'
-    console.log outFile
+
+    console.log "Writing docs for #{stylusFile} to #{outFile}"
 
     fs.writeFileSync outFile, html
+
+# Copy assets
+copyAssets = (inputDir, outputDir) ->
+    console.log "Copying assets from #{inputDir}/assets to #{outputDir}"
+
+    wrench.copyDirSyncRecursive "#{inputDir}/assets", "#{outputDir}/assets"
 
 # Exports
 module.exports = {documentFile}
