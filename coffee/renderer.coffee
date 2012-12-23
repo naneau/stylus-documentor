@@ -9,7 +9,7 @@ path = require 'path'
 parse = require './parser'
 
 # Default templates dir
-defaultTemplatedir = path.join (path.dirname (fs.realpathSync __filename)), '../templates'
+defaultTemplatedir = path.join (path.dirname (fs.realpathSync __filename)), '../output/html/templates'
 
 # Document a file
 documentFile = (stylusFile, outputDir = null, templateDir = null) ->

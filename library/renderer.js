@@ -10,7 +10,7 @@
 
   parse = require('./parser');
 
-  defaultTemplatedir = path.join(path.dirname(fs.realpathSync(__filename)), '../templates');
+  defaultTemplatedir = path.join(path.dirname(fs.realpathSync(__filename)), '../output/html/templates');
 
   documentFile = function(stylusFile, outputDir, templateDir) {
     var tree;
