@@ -24,7 +24,8 @@
   },
 
   "dependencies" : {
-      "optimist" : ">=0.3.5 <0.4",
-      "jade"     : ">=0.27 <0.28"
+      "optimist"     : ">=0.3.5 <0.4",
+      "klipspringer" : ">=0.0",
+      "jade"         : ">=0.27 <0.28"
   }
 }
