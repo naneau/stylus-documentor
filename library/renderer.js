@@ -37,6 +37,16 @@
     return renderFileTree(stylusFile, tree, inputDir, outputDir);
   };
 
+  copyAssets = function(inputDir, outputDir) {
+    if (!(outputDir != null)) {
+      outputDir = process.cwd();
+    }
+    if (!(inputDir != null)) {
+      inputDir = defaultInputDir;
+    }
+    return copyAssets(inputDir, outputDir);
+  };
+
   renderFileTree = function(fileName, tree, inputDir, outputDir) {
     var options, template;
     template = inputDir + '/templates/file.jade';
@@ -54,7 +64,6 @@
       if (err != null) {
         error("Could not render jade template \"" + template + "\", because: \n\n" + err);
       }
-      copyAssets(inputDir, outputDir);
       return writeOutput(str, outputDir, fileName);
     });
   };
@@ -72,7 +81,8 @@
   };
 
   module.exports = {
-    documentFile: documentFile
+    documentFile: documentFile,
+    copyAssets: copyAssets
   };
 
 }).call(this);

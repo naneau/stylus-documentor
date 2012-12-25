@@ -12,6 +12,7 @@ glob = require 'glob'
 # Single file passed
 if argv.file? and argv.file.length > 0
     renderer.documentFile argv.file, argv.out, argv.templates
+    renderer.copyAssets argv.out, argv.templates
 
 # Glob passed
 else if argv.glob? and argv.glob.length > 0
@@ -25,3 +26,5 @@ else if argv.glob? and argv.glob.length > 0
         for file in files
             do (file) ->
                 renderer.documentFile file, argv.out, argv.templates
+
+        renderer.copyAssets argv.out, argv.templates

@@ -35,6 +35,18 @@ documentFile = (stylusFile, outputDir = null, inputDir = null) ->
     # Render the tree
     renderFileTree stylusFile, tree, inputDir, outputDir
 
+# Copy assets
+copyAssets = (inputDir, outputDir) ->
+
+    # Output
+    outputDir = (do process.cwd) if not outputDir?
+
+    # Dir of templates
+    inputDir = defaultInputDir if not inputDir?
+
+    # Copy assets
+    copyAssets inputDir, outputDir
+
 # Render a file's tree
 renderFileTree = (fileName, tree, inputDir, outputDir) ->
 
@@ -58,8 +70,6 @@ renderFileTree = (fileName, tree, inputDir, outputDir) ->
         if err?
             error "Could not render jade template \"#{template}\", because: \n\n#{err}"
 
-        # Copy assets
-        copyAssets inputDir, outputDir
 
         # Write the output
         writeOutput str, outputDir, fileName
@@ -80,4 +90,4 @@ copyAssets = (inputDir, outputDir) ->
     wrench.copyDirSyncRecursive "#{inputDir}/assets", "#{outputDir}/assets"
 
 # Exports
-module.exports = {documentFile}
+module.exports = {documentFile, copyAssets}
