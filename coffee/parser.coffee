@@ -116,7 +116,12 @@ parseVariable = (line, tree, parsingState) ->
     openEntry line, parsingState
 
     # Add variable to stack
-    tree.variables.push entry parsingState
+    variableEntry = entry parsingState, 'variable'
+
+    # Name of the variable
+    variableEntry.shortName = variableEntry.assignment.substr 0, (variableEntry.assignment.indexOf ' ')
+
+    tree.variables.push variableEntry
 
     resetState parsingState
 
@@ -132,7 +137,12 @@ parseFunction = (line, tree, parsingState) ->
     if functionEndsOnLine line
 
         # Function opening is done
-        tree.functions.push entry parsingState
+        functionEntry = entry parsingState, 'function'
+
+        # Short name of the function
+        functionEntry.shortName = functionEntry.assignment.substr 0, (functionEntry.assignment.indexOf '(')
+
+        tree.functions.push functionEntry
 
         # Function is no longer coming up
         parsingState.functionOrAssignmentNext = false
@@ -154,10 +164,11 @@ openEntry = (line, parsingState) ->
     parsingState.assignmentBuffer.push line
 
 # Function or variable entry
-entry = (parsingState) ->
+entry = (parsingState, type) ->
     line        : parsingState.openingLine
-    function    : parsingState.assignmentBuffer.join "\n"
+    assignment  : parsingState.assignmentBuffer.join "\n"
     description : parsingState.assignmentDocBuffer.join "\n"
+    type        : type
 
 # Reset parsing state
 resetState = (parsingState) ->

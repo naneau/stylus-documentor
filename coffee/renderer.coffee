@@ -45,9 +45,10 @@ renderFileTree = (fileName, tree, inputDir, outputDir) ->
 
     # Options
     options =
-        fileName : fileName
-        tree     : tree
-        pretty   : true
+        fileName     : fileName
+        fileBaseName : path.basename fileName
+        tree         : tree
+        pretty       : true
 
     # Render
     jade.renderFile template, options, (err, str) ->

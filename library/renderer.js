@@ -45,6 +45,7 @@
     }
     options = {
       fileName: fileName,
+      fileBaseName: path.basename(fileName),
       tree: tree,
       pretty: true
     };
