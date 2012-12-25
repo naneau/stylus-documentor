@@ -54,11 +54,11 @@ parseFile = (file) ->
             # Up the line number
             parsingState.currentLineNumber = parsingState.currentLineNumber + 1
 
-            # Skip empty lines
-            return if (do line.trim).length is 0
-
             # Parse non empty lines
             parseLine line, tree, parsingState
+
+    # Join intro to string
+    tree.intro = tree.intro.join "\n"
 
     return tree
 
