@@ -6,10 +6,7 @@
 
   argv = (require('optimist')).argv;
 
-  error = function(message) {
-    console.error(message);
-    return process.exit(1);
-  };
+  error = require('./error');
 
   if (argv.file.length > 0) {
     renderer.documentFile(argv.file, argv.out, argv.templates);

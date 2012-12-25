@@ -4,10 +4,8 @@ renderer = require './renderer'
 # Arguments
 argv = (require 'optimist').argv
 
-# Error out
-error = (message) ->
-    console.error message
-    process.exit 1
+# Error
+error = require './error'
 
 # Single file passed
 if argv.file.length > 0

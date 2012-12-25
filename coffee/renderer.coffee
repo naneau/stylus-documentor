@@ -11,6 +11,9 @@ wrench = require 'wrench'
 # Parser
 parse = require './parser'
 
+# Error
+error = require './error'
+
 # Default templates dir
 defaultInputDir = path.join (path.dirname (fs.realpathSync __filename)), '../output/html'
 
@@ -37,6 +40,8 @@ renderFileTree = (fileName, tree, inputDir, outputDir) ->
 
     # Template file
     template = (inputDir + '/templates/file.jade')
+
+    error "\"#{template}\" template file does not exist " if not fs.existsSync template
 
     # Options
     options =
