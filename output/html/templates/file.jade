@@ -22,8 +22,8 @@ html
             section.variables
                 h1 Variables
 
-                each variable in tree.variables
-                    mixin assignment(functionDefinition)
+                each variableDefinition in tree.variables
+                    mixin assignment(variableDefinition)
 
             // Functions
             section.functions
