@@ -50,7 +50,7 @@
     };
     return jade.renderFile(template, options, function(err, str) {
       if (err != null) {
-        process.exit(1);
+        error("Could not render jade template \"" + template + "\", because: \n\n" + err);
       }
       copyAssets(inputDir, outputDir);
       return writeOutput(str, outputDir, fileName);

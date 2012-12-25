@@ -53,7 +53,8 @@ renderFileTree = (fileName, tree, inputDir, outputDir) ->
     jade.renderFile template, options, (err, str) ->
 
         # Exit on error
-        process.exit 1 if err?
+        if err?
+            error "Could not render jade template \"#{template}\", because: \n\n#{err}"
 
         # Copy assets
         copyAssets inputDir, outputDir
