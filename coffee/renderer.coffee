@@ -49,7 +49,7 @@ renderFileTree = (fileName, tree, inputDir, outputDir) ->
         fileBaseName : path.basename fileName
         tree         : tree
         pretty       : true
-        markdown     : (require 'markdown-js').parse
+        markdown     : (require 'marked')
 
     # Render
     jade.renderFile template, options, (err, str) ->

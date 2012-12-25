@@ -48,7 +48,7 @@
       fileBaseName: path.basename(fileName),
       tree: tree,
       pretty: true,
-      markdown: (require('markdown-js')).parse
+      markdown: require('marked')
     };
     return jade.renderFile(template, options, function(err, str) {
       if (err != null) {
